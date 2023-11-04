@@ -8,8 +8,7 @@ Expanded NoteModel(int num, String note, Color colors) {
         color: colors,
         child: TextButton(
           onPressed: () {
-            final player = AudioPlayer();
-            player.play(AssetSource('audios/note$num.wav'));
+            numnote(num);
           },
           child: Text(
             note,
@@ -20,4 +19,9 @@ Expanded NoteModel(int num, String note, Color colors) {
       ),
     ),
   );
+}
+
+void numnote(int num) {
+  final player = AudioPlayer();
+  player.play(AssetSource('audios/note$num.wav'));
 }
